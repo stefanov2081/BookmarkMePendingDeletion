@@ -1,15 +1,19 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace BookmarkMe.Domain.Test
+﻿namespace BookmarkMe.Domain.Test
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class UnitTest1
+    public class BookmarkTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Rename_WithValidData_ChangesName()
         {
-            string empty;
+            var bookmark = new Bookmark("test");
+
+            var newName = "cool name for a bookmark";
+            bookmark.Rename(newName);
+
+            Assert.AreEqual(newName, bookmark.Name);
         }
     }
 }

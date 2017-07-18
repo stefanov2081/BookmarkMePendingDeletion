@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{35FB2D06-C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookmarkMe.Domain.Test", "BookmarkMe.Domain.Test\BookmarkMe.Domain.Test.csproj", "{9C924E03-2148-455A-8D0C-33FA176DF07A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookmarkMe.Domain", "BookmarkMe.Domain\BookmarkMe.Domain.csproj", "{E90BD891-6201-47EA-80A9-9B83FB19B3CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +23,16 @@ Global
 		{9C924E03-2148-455A-8D0C-33FA176DF07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C924E03-2148-455A-8D0C-33FA176DF07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C924E03-2148-455A-8D0C-33FA176DF07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E90BD891-6201-47EA-80A9-9B83FB19B3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E90BD891-6201-47EA-80A9-9B83FB19B3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E90BD891-6201-47EA-80A9-9B83FB19B3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E90BD891-6201-47EA-80A9-9B83FB19B3CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9C924E03-2148-455A-8D0C-33FA176DF07A} = {2DB96D90-1342-4E7A-B4F9-390C025FCC0F}
+		{E90BD891-6201-47EA-80A9-9B83FB19B3CF} = {2DB96D90-1342-4E7A-B4F9-390C025FCC0F}
 	EndGlobalSection
 EndGlobal
