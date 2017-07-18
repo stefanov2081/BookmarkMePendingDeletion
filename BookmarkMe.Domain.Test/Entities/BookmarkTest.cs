@@ -47,58 +47,58 @@
 
 
         [TestMethod]
-        public void Rename_WithValidName_ChangesName()
+        public void SetName_WithValidName_ChangesName()
         {
             var validName = "cool name for a bookmark";
 
-            bookmark.Rename(validName);
+            bookmark.Name = validName;
 
             Assert.AreEqual(validName, bookmark.Name);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Rename_WithEmptyName_ThrowsArgumentNullException()
+        public void SetName_WithEmptyName_ThrowsArgumentNullException()
         {
             var emptyName = string.Empty;
 
-            bookmark.Rename(emptyName);
+            bookmark.Name = emptyName;
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void Rename_WithOnlyWhiteSpaces_ThrowsArgumentNullException()
+        public void SetName_WithOnlyWhiteSpaces_ThrowsArgumentNullException()
         {
             var whiteSpaceName = "  ";
 
-            bookmark.Rename(whiteSpaceName);
+            bookmark.Name = whiteSpaceName;
         }
 
         [TestMethod]
-        public void ChangeUrl_WithValidUrl_ChangesUrl()
+        public void SetUrl_WithValidUrl_ChangesUrl()
         {
             var validUrl = new Uri("http://www.yahoo.com");
 
-            bookmark.ChangeUrl(validUrl);
+            bookmark.Url = validUrl;
 
             Assert.AreEqual(validUrl.AbsoluteUri, bookmark.Url.AbsoluteUri);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void ChangeUrl_WithNull_ThrowsArgumentNullException()
+        public void SetUrl_WithNull_ThrowsArgumentNullException()
         {
             Uri nullUrl = null;
 
-            bookmark.ChangeUrl(nullUrl);
+            bookmark.Url = nullUrl;
         }
 
         [TestMethod]
-        public void ChangeDescription_WithValidDescription_ChangesDescription()
+        public void SetDescription_WithValidDescription_ChangesDescription()
         {
             var validDescription = "cool new valid description";
 
-            bookmark.ChangeDescription(validDescription);
+            bookmark.Description = validDescription;
 
             Assert.AreEqual(validDescription, bookmark.Description);
         }

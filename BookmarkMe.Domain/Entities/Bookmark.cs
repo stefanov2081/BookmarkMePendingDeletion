@@ -22,7 +22,7 @@
                 return description;
             }
 
-            private set
+            set
             {
                 description = value;
             }
@@ -36,7 +36,7 @@
                 return name;
             }
 
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -54,7 +54,7 @@
                 return url;
             }
 
-            private set
+            set
             {
                 if (value == null)
                 {
@@ -63,22 +63,6 @@
 
                 url = value;
             }
-        }
-
-
-        public void Rename(string name)
-        {
-            Name = name;
-        }
-
-        public void ChangeUrl(Uri url)
-        {
-            Url = url;
-        }
-
-        public void ChangeDescription(string description)
-        {
-            Description = description;
         }
     }
 }
