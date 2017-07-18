@@ -53,7 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Entities\BookmarkTest.cs" />
-    <Compile Include="Entities\TagTest.cs" />
+    <Compile Include="Entities\LabelTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,9 +6,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BookmarkMe.Domain.Test.Entities
 {
     [TestClass]
-    public class TagTest
+    public class LabelTest
     {
-        public TagTest()
+        public LabelTest()
         {
         }
 
