@@ -7,14 +7,14 @@
     [TestClass]
     public class BookmarkTest
     {
-        private string name;
-        private string url;
         private Bookmark bookmark;
+        private string name;
+        private Uri url;
 
         public BookmarkTest()
         {
             name = "test";
-            url = "http://www.google.com";
+            url = new Uri("http://www.google.com");
         }
 
         [TestInitialize]
@@ -54,29 +54,20 @@
         [TestMethod]
         public void ChangeUrl_WithValidUrl_ChangesUrl()
         {
-            var newUrl = "http://www.yahoo.com";
+            var newUrl = new Uri("http://www.yahoo.com");
 
             bookmark.ChangeUrl(newUrl);
 
-            Assert.AreEqual(newUrl, bookmark.Url);
+            Assert.AreEqual(newUrl.AbsoluteUri, bookmark.Url.AbsoluteUri);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public void ChangeUrl_WithEmptyUrl_ThrowsArgumentNullException()
+        public void ChangeUrl_WithNull_ThrowsArgumentNullException()
         {
-            var emptyUrl = string.Empty;
+            Uri nullUrl = null;
 
-            bookmark.ChangeUrl(emptyUrl);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ChangeUrl_WithOnlyWhiteSpaces_ThrowsArgumentNullException()
-        {
-            var whiteSpaceUrl = "  ";
-
-            bookmark.ChangeUrl(whiteSpaceUrl);
+            bookmark.ChangeUrl(nullUrl);
         }
     }
 }

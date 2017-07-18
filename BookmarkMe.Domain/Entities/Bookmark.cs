@@ -5,9 +5,9 @@
     public class Bookmark
     {
         private string name;
-        private string url;
+        private Uri url;
 
-        public Bookmark(string name, string url)
+        public Bookmark(string name, Uri url)
         {
             Name = name;
             Url = url;
@@ -31,7 +31,7 @@
             }
         }
 
-        public string Url
+        public Uri Url
         {
             get
             {
@@ -40,7 +40,7 @@
 
             private set
             {
-                if (string.IsNullOrWhiteSpace(value))
+                if (value == null)
                 {
                     throw new ArgumentNullException();
                 }
@@ -54,7 +54,7 @@
             Name = name;
         }
 
-        public void ChangeUrl(string url)
+        public void ChangeUrl(Uri url)
         {
             Url = url;
         }
