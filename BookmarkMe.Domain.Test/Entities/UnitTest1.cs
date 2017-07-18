@@ -1,7 +1,8 @@
-﻿namespace BookmarkMe.Domain.Test
+﻿namespace BookmarkMe.Domain.Test.Entities
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using BookmarkMe.Domain.Entities;
 
     [TestClass]
     public class BookmarkTest

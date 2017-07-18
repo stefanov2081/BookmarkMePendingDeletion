@@ -1,4 +1,4 @@
-﻿namespace BookmarkMe.Domain
+﻿namespace BookmarkMe.Domain.Entities
 {
     using System;
 
