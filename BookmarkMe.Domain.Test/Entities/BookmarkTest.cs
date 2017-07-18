@@ -8,29 +8,52 @@
     public class BookmarkTest
     {
         private Bookmark bookmark;
+        private string description;
         private string name;
-        private Uri url;
+        private string url;
 
         public BookmarkTest()
         {
+            description = "description";
             name = "test";
-            url = new Uri("http://www.google.com");
+            url = "http://www.google.com";
         }
 
         [TestInitialize]
         public void SetUp()
         {
-            bookmark = new Bookmark(name, url);
+            bookmark = new Bookmark(name, url, description);
         }
+
+        [TestMethod]
+        public void Constructor_WithValidName_SetsAllName()
+        {
+            Assert.AreEqual(name, bookmark.Name);
+        }
+
+        [TestMethod]
+        public void Constructor_WithValidUrl_SetsUrl()
+        {
+            var uri = new Uri(url);
+
+            Assert.AreEqual(uri.AbsoluteUri, bookmark.Url.AbsoluteUri);
+        }
+
+        [TestMethod]
+        public void Constructor_WithValidDescription_SetsDescription()
+        {
+            Assert.AreEqual(description, bookmark.Description);
+        }
+
 
         [TestMethod]
         public void Rename_WithValidName_ChangesName()
         {
-            var newName = "cool name for a bookmark";
+            var validName = "cool name for a bookmark";
 
-            bookmark.Rename(newName);
+            bookmark.Rename(validName);
 
-            Assert.AreEqual(newName, bookmark.Name);
+            Assert.AreEqual(validName, bookmark.Name);
         }
 
         [TestMethod]
@@ -54,11 +77,11 @@
         [TestMethod]
         public void ChangeUrl_WithValidUrl_ChangesUrl()
         {
-            var newUrl = new Uri("http://www.yahoo.com");
+            var validUrl = new Uri("http://www.yahoo.com");
 
-            bookmark.ChangeUrl(newUrl);
+            bookmark.ChangeUrl(validUrl);
 
-            Assert.AreEqual(newUrl.AbsoluteUri, bookmark.Url.AbsoluteUri);
+            Assert.AreEqual(validUrl.AbsoluteUri, bookmark.Url.AbsoluteUri);
         }
 
         [TestMethod]
@@ -68,6 +91,16 @@
             Uri nullUrl = null;
 
             bookmark.ChangeUrl(nullUrl);
+        }
+
+        [TestMethod]
+        public void ChangeDescription_WithValidDescription_ChangesDescription()
+        {
+            var validDescription = "cool new valid description";
+
+            bookmark.ChangeDescription(validDescription);
+
+            Assert.AreEqual(validDescription, bookmark.Description);
         }
     }
 }

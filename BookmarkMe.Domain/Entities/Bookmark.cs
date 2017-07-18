@@ -4,14 +4,30 @@
 
     public class Bookmark
     {
+        private string description;
         private string name;
         private Uri url;
 
-        public Bookmark(string name, Uri url)
+        public Bookmark(string name, string url, string description)
         {
+            Description = description; 
             Name = name;
-            Url = url;
+            Url = new Uri(url);
         }
+
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+
+            private set
+            {
+                description = value;
+            }
+        }
+
 
         public string Name
         {
@@ -49,6 +65,7 @@
             }
         }
 
+
         public void Rename(string name)
         {
             Name = name;
@@ -57,6 +74,11 @@
         public void ChangeUrl(Uri url)
         {
             Url = url;
+        }
+
+        public void ChangeDescription(string description)
+        {
+            Description = description;
         }
     }
 }
