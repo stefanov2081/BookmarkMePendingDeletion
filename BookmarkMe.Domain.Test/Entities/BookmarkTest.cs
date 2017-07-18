@@ -2,7 +2,7 @@
 {
     using System;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using BookmarkMe.Domain.Entities;
+    using Domain.Entities;
 
     [TestClass]
     public class BookmarkTest
