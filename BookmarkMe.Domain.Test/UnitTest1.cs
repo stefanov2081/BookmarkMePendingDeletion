@@ -9,7 +9,7 @@ namespace BookmarkMe.Domain.Test
         [TestMethod]
         public void TestMethod1()
         {
-            string empty = string.Empty;
+            string empty;
         }
     }
 }
