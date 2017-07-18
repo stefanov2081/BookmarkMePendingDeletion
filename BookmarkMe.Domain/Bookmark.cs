@@ -6,7 +6,7 @@
 
         public Bookmark(string name)
         {
-            this.Name = name;
+            Name = name;
         }
 
         public string Name
