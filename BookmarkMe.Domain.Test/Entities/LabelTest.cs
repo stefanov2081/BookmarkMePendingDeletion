@@ -1,15 +1,18 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace BookmarkMe.Domain.Test.Entities
+﻿namespace BookmarkMe.Domain.Test.Entities
 {
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Domain.Entities;
+
     [TestClass]
     public class LabelTest
     {
+        Label label;
+        string name;
+
         public LabelTest()
         {
+            name = "name";
         }
 
         #region Additional test attributes
@@ -34,10 +37,44 @@ namespace BookmarkMe.Domain.Test.Entities
         //
         #endregion
 
-        [TestMethod]
-        public void Rename_WithValidName_ChangesName()
+        [TestInitialize]
+        public void SetUp()
         {
+            label = new Label(name);
+        }
 
+        [TestMethod]
+        public void Constructor_WithValidName_SetsName()
+        {
+            Assert.AreEqual(name, label.Name);
+        }
+
+        [TestMethod]
+        public void SetName_WithValidName_SetsName()
+        {
+            var validName = "valid name";
+
+            label.Name = validName;
+
+            Assert.AreEqual(validName, label.Name);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SetName_WithEmptyName_ThrowsArgumentNullException()
+        {
+            var emptyName = string.Empty;
+
+            label.Name = emptyName;
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SetName_WithOnlyWhiteSpaces_ThrowsArgumentNullException()
+        {
+            var whiteSpaceName = "   ";
+
+            label.Name = whiteSpaceName;
         }
     }
 }
